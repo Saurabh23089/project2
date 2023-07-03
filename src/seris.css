@@ -1,0 +1,66 @@
+
+#profile{
+    position: absolute;
+    top:0px;
+    right:0px;
+    
+}
+
+#profile2{
+    margin-left: 900px;
+    background-color: turquoise;
+}
+
+#profile2,.title{
+    display: inline-block;
+}
+
+ 
+ img{
+    
+    padding-left:60px;
+    padding-top:80px;
+    
+    
+    height:250px;
+    width:220px;
+
+    
+}
+
+body button{
+    margin-left:60px;
+    width:160px;
+}
+
+body span{
+    margin-left: 60px;
+    
+    
+}
+
+p{
+    margin-left: 60px;
+    
+}
+
+.ss{
+    display:inline-block;
+    
+}
+
+
+
+
+
+
+/* For profile  */
+/*
+#profile{
+    position:absolute;
+    border: 2px;
+
+   
+    margin-top: -680px;
+}*/
+

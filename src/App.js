@@ -1,25 +1,41 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.css'
+//import LoginForm from './Login.js'
+//import Createaccount from './Createaccount.js'
+import './firebase.js'
+// import Welcome from './Welcome.js'
+import { useState } from 'react';
+import Sample from './sample.js';
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
+import {BrowserRouter,Routes,Route,useNavigate, Router,Switch} from 'react-router-dom';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Sample/>}/>
+    </Routes>
+
+    </BrowserRouter>
+   
+  )
+  }
+
+/*  return (
+  <> 
+  
+  <BrowserRouter>
+    
+     <Routes>
+       <Route path='/' element={<LoginForm/>}/>
+       <Route path='/Createaccount' element={<Createaccount/>}/>
+       <Route path='/Welcome' element={<Welcome/>}/>
+     </Routes>
+  </BrowserRouter>
+  </>
+); */
+
 
 export default App;
