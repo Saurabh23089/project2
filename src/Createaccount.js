@@ -4,6 +4,8 @@ import './firebase.js'
 import {db} from './firebase.js'
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
 import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom';
+import {getFirestore,collection,addDoc} from 'firebase/firestore';
+import glogo from './glogo.png';
 
 
 
@@ -19,7 +21,7 @@ function Createaccount(){
     const provider=new GoogleAuthProvider();
    const navigate=useNavigate();
   
-    const createaccount=(Name,email,password,mobile) => {  // For first time users
+/*    const createaccount=(Name,email,password,mobile) => {  // For first time users
       const auth=getAuth();
      // const db=firebase.firestore();
      console.log(db);
@@ -44,7 +46,42 @@ function Createaccount(){
         })
         setemail('');
         setpassword('');
+      }  */
+
+
+      const createaccount=async(Name,email,password)=>{
+         try{
+           const auth=getAuth();
+           const firestore=getFirestore();
+
+           const usercredential=await createUserWithEmailAndPassword(auth,email,password);
+           const user=usercredential.user;
+            
+           const userData = {
+            uid: '',
+            Name: '',
+            email: '',
+            
+          };
+      
+          if (user && user.uid) {
+            userData.uid = user.uid;
+            userData.Name = Name;
+            userData.email = user.email;
+            
+          }
+           
+         
+         const collectionref=collection(firestore,'users');
+         await addDoc(collectionref,userData);
+         console.log('User Signup details stored to firestore successfully');
+          }
+        
+          catch(error){
+             console.log('Sign up failed',error.message);
+          }
       }
+
   
       const signupwithGoogle=() =>{
           const auth=getAuth();
@@ -89,37 +126,40 @@ function Createaccount(){
     
     return(
       <>
-        <h3>CREATE ACCOUNT</h3>
-        <p onClick={() => {navigate('/')}}>Sign In</p>
+        <h3 className='heading' onClick={() => {navigate('/')}}>SIGN IN</h3>
         <form className='caform'>
-          <div>
+          <div className='div1'>
+
           <label className='lb1'>Name
             <input type="text" className='ip1' onChange={(e) =>setName(e.target.value)}/>
           </label>
-          </div>
-  
-          <div>
+
           <label className='lb2' >Email Address
-            <input type="email" className='ip2' onChange={(e) => {setemail(e.target.value)}}/>
+            <input type="email" className='ip1' onChange={(e) => {setemail(e.target.value)}}/>
           </label>
           </div>
   
+          <div className='div2'>
+
           <label>Password
-            <input type="password"onChange={(e) => {setpassword(e.target.value)}}/>
+            <input type="password" className='ip2' onChange={(e) => {setpassword(e.target.value)}}/>
           </label>
   
           <label>Confirm Password
-          <input type="password" onChange={(e) => {setconfirmpassword(e.target.value)}}/>
+          <input type="password" className='ip2' onChange={(e) => {setconfirmpassword(e.target.value)}}/>
           </label>
+
+          </div>
   
-          <label>Mobile Number
-           <input type="number" placeholder='Your mobile number'/>
-           <input type="checkbox" onChange={(e) => {setmobile(e.target.value)}}/>
-           <p>Whatsapp</p>
-           <button onClick={handlecreateaccount}>Create new account</button>
-           <button onClickCapture={handlegooglesignup}>Signup with Google</button>
+          
            
-          </label>
+           <button className='cn' onClick={handlecreateaccount}>Create new account</button>
+           <div className='lwg'>
+           <button className='sg' onClickCapture={handlegooglesignup}><img src={glogo} alt='glogo'className='googlelogo1'/>Signup with Google</button>
+           </div>
+          
+           
+
   
         </form>
       </>

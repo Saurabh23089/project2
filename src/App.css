@@ -44,7 +44,7 @@
 }*/
 
 
-label,input,button{
+label,input{
   display:block;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -97,6 +97,7 @@ input:focus{
 
 /* CSS for CREATE ACCOUNT  */
 
+/*
 h3,a{
   display: inline;
 }
@@ -104,7 +105,107 @@ h3,a{
 h3{
   margin-right: 80px;
 }
+*/
 
+
+.div1 {
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.div2 {
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.div1 label,
+.div2 label {
+  margin-right: 40px;
+}
+
+.div1 input,
+.div2 input {
+  flex: 1;
+  width: 250px;
+  height: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-container button {
+  width: 150px;
+  border-radius: 1ex;
+}
+
+.cn{
+  position:absolute;
+  left:80px;
+  top:280px;
+  width:200px;
+ /* outline:none;*/
+  border:none;
+  color:salmon;
+  background-color:snow;
+  border:1px solid #ccc;
+}
+
+.cn:hover{
+  color:burlywood;
+   
+}
+
+.sg{
+  position:absolute;
+  left:80px;
+  top:340px;
+  width:200px;
+  outline:none;
+  border:none;
+  color:cadetblue;
+  border:1px solid #ccc;
+  background-color: antiquewhite;
+}
+
+.sg:hover{
+   color:rosybrown;
+}
+
+.sg img{
+  background-color: #ccc;
+}
+
+.heading{
+  position:absolute;
+  left:80px;
+  top:18px;
+}
+
+
+.googlelogo1{
+  position:absolute;
+  top:0 px;
+  left:0px;
+  height:25.65px;
+  text-align:center;
+}
+
+
+
+
+.caform{
+  padding-top: 50px;
+}
+
+input:focus{
+  outline: none;
+  border-color: lightblue;
+}
 
 
 

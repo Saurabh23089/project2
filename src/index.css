@@ -141,29 +141,24 @@ header{
   /*border-style: dashed;*/
   border-radius: 8px;
   border-right-color: #389738;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   background-color:aqua;
-  margin-top:15px;
+  margin-top:5px;
 }
 
-
-.loginwithgooglebtn{
-  max-width: 70%;
-  text-align: start;
-  background-color: #22254b;
-  color:#fff;
-  
+.hg{
+  position:absolute;
 }
 
 .googlelogo{
-  margin-top: -6px;
-  height:20px;
-  margin-right: 10px;
- background: none;
-  background-color:inherit;
-  display: inline-block;
-  border:none;
-  
+  position:absolute;
+  top:0 px;
+  left:0px;
+  height:25px;
+  text-align:center;
+  outline:#389738  
 }
+
+
 
 

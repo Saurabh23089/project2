@@ -21,6 +21,7 @@ function LoginForm(){
           const user=usercredential.user;
           console.log('Sign In Scuccessfull');
           navigate('/Welcome');
+          console.log(password);
       })
       .catch((error) => {
          const errorcode=error.code;
@@ -81,9 +82,9 @@ function LoginForm(){
     }
   
         return (
+
           <div className='loginpage'>
-            <p className='lt1'>SIGN IN</p>
-            <p className='lt2' onClick={() => navigate('/Createaccount')}>Create an account</p>
+            <p className='lt1' onClick={() => navigate('/Createaccount')}>Create an account</p>
             
             <div className='loginform'>
             <form className='right-portion'>
@@ -94,9 +95,14 @@ function LoginForm(){
               <input className='ip' placeholder='Enter Password'type="password" onChange={(e) => {setpassowrd(e.target.value)}}/>
             </label>
             <button type="submit" onClick={handlelogin} className='loginbtn'>Login</button>
-            <button type='submit' onClick={handleloginwithgoogle} className='loginwithgooglebtn'><img src={glogo} alt='glogo'className='googlelogo'/>LogIn With Google</button> 
+            <div>
+              
+            </div>
+            <button type='submit' onClick={handleloginwithgoogle} className='hg'><img src={glogo} alt='glogo'className='googlelogo'/>LogIn With Google</button> 
            </form>
           </div> 
+         
+         
           
           </div>
           )
