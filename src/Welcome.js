@@ -90,8 +90,11 @@ function Welcome()
       />
       
     </form>
-    <button className='logout-btn' onClick={handlelogout}>Logout</button>
-        
+    
+    {/* <label><button className='logout-btn' onClick={handlelogout}>Logout</button></label>     */}
+    
+    <span className='logout-btn' onClick={handlelogout}>Logout</span>
+
     </header>
     
       

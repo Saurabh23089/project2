@@ -20,36 +20,9 @@ function Createaccount(){
     const[confirmpassword,setconfirmpassword]=useState("");
     const provider=new GoogleAuthProvider();
    const navigate=useNavigate();
-  
-/*    const createaccount=(Name,email,password,mobile) => {  // For first time users
-      const auth=getAuth();
-     // const db=firebase.firestore();
-     console.log(db);
-      createUserWithEmailAndPassword(auth,email,password)
-        .then((usercredential) => {
-            const user=usercredential.user;
-            console.log('User Created:',user); 
-            
-            db.collection("users").doc(email).set({
-              Name : Name,
-              Mobile: mobile
-            });
-        })
-
-        
-    
-        .catch((error) => {
-          const errorcode=error.code;
-          const errormessage=error.message;
-          console.log('Error creating user:',errorcode,errormessage);
-          
-        })
-        setemail('');
-        setpassword('');
-      }  */
 
 
-      const createaccount=async(Name,email,password)=>{
+    const createaccount=async(Name,email,password)=>{
          try{
            const auth=getAuth();
            const firestore=getFirestore();
@@ -75,6 +48,11 @@ function Createaccount(){
          const collectionref=collection(firestore,'users');
          await addDoc(collectionref,userData);
          console.log('User Signup details stored to firestore successfully');
+         navigate('/Welcome');
+          setName('');
+           setemail('');
+           setpassword('');
+           setconfirmpassword('');
           }
         
           catch(error){
@@ -89,7 +67,7 @@ function Createaccount(){
           .then((result) => {
             const user=result.user;
             console.log('SignIn With Google Successfull',user);
-          //  navigate('/Welcome');
+           navigate('/Welcome');
           })
           .catch((error) => {
              const errormessage=error.message;
@@ -105,16 +83,6 @@ function Createaccount(){
             createaccount(Name,email,password,mobile);
             console.log('sign in successfull');
          }
-          
-         else{
-           
-           console.log('failed');
-           console.log(Name);
-           console.log(email);
-           console.log(mobile);
-           console.log(password);
-           console.log(confirmpassword);
-         }
       }
   
       const handlegooglesignup=(e) => {
@@ -126,7 +94,7 @@ function Createaccount(){
     
     return(
       <>
-        <h3 className='heading' onClick={() => {navigate('/')}}>SIGN IN</h3>
+        <p className='heading' onClick={() => {navigate('/')}}>SIGN IN</p>
         <form className='caform'>
           <div className='div1'>
 
@@ -157,9 +125,6 @@ function Createaccount(){
            <div className='lwg'>
            <button className='sg' onClickCapture={handlegooglesignup}><img src={glogo} alt='glogo'className='googlelogo1'/>Signup with Google</button>
            </div>
-          
-           
-
   
         </form>
       </>

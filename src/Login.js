@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Welcome from './Welcome';
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
 import {BrowserRouter,Routes,Route,useNavigate, Link} from 'react-router-dom';
+import {db} from './firebase.js';
 
 
 
@@ -13,6 +14,9 @@ function LoginForm(){
     const[password,setpassowrd]=useState('');
     const provider=new GoogleAuthProvider();
     const navigate=useNavigate();
+
+   
+      
   
     const handlesignin=(email,password)=>{
       const auth=getAuth();
@@ -21,33 +25,24 @@ function LoginForm(){
           const user=usercredential.user;
           console.log('Sign In Scuccessfull');
           navigate('/Welcome');
-          console.log(password);
       })
       .catch((error) => {
-         const errorcode=error.code;
+        const errorcode=error.code;
+        const errormessage=error.message;
+        if(errorcode==='auth/user-not-found')
+        {
+          alert("Account not Found");
+        }
+        else if(errorcode==='auth/wrong-password')
+        {
+          prompt('Incorrect Password')
+        }
+       /*  const errorcode=error.code;
          const message=error.message;
-         console.log('Sign In Failed:',errorcode,message,'1');
+         console.log('Sign In Failed:',errorcode,message,'1'); */
       })
-    }
+    }  
   
-/*    const handlecreateaccount=(email,password) => {  // For first time users
-      const auth=getAuth();
-      createUserWithEmailAndPassword(auth,email,password)
-        .then((usercredential) => {
-            const user=usercredential.user;
-            console.log('User Created:',user);
-          navigate('/Createaccount')
-            
-        })
-    
-        .catch((error) => {
-          const errorcode=error.code;
-          const errormessage=error.message;
-          console.log('Error creating user:',errorcode,errormessage);
-        })
-        setemail('');
-        setpassowrd('');
-      }   */
   
       const signinwithgoogle=() => {
          const auth=getAuth();
@@ -64,11 +59,6 @@ function LoginForm(){
          })
   
       }
-  
- /*     const handlesubmit=(e) => {
-      e.preventDefault();
-      handlecreateaccount(email,password);
-    }    */
   
   
     const handlelogin=(e) => {
@@ -109,5 +99,3 @@ function LoginForm(){
   }
 
   export default LoginForm;
-
-/*  <button type='submit' onClick={handlesubmit}>Create Account</button>   */

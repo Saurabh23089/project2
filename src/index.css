@@ -1,16 +1,4 @@
 
-/*
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}*/
-
-
-
-
-/*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");*/
-
-
 *{
   box-sizing: border-box;
 }
@@ -21,9 +9,6 @@ body{
   font-family: "poppins",sans-serif;
   margin:0;
 }
-
-
-
 
 .movies{
   background-color: #373b69;
@@ -45,6 +30,7 @@ body{
 .movie-container{
   display:flex;
   flex-wrap: wrap;
+  background-color: #22254b;
 }
 
 .movie-info{
@@ -87,9 +73,15 @@ header{
 }
 
 .logout-btn{
-  margin-left:660px;
-  color:#22254b;
+  margin-left:auto;
+  color:snow;
   
+}
+
+.logout-btn:hover{
+  cursor:pointer;
+  color:powderblue;
+ 
 }
 
 .search{
@@ -138,7 +130,6 @@ header{
 
 .loginbtn{
   width:120px;
-  /*border-style: dashed;*/
   border-radius: 8px;
   border-right-color: #389738;
   margin-bottom: 20px;
@@ -148,17 +139,41 @@ header{
 
 .hg{
   position:absolute;
+  color:black;
+  border:0.5px solid burlywood;
+  width:220px;
+}
+
+.hg:hover{
+  color:springgreen
 }
 
 .googlelogo{
   position:absolute;
   top:0 px;
   left:0px;
-  height:25px;
+  height:25.3px;
   text-align:center;
   outline:#389738  
 }
 
+.loginbtn:hover{
+  border:2px solid blue;
+}
 
 
+.lt1:hover{
+   cursor:pointer;
+}
 
+.ip{
+  padding:10px;
+}
+
+.ip:focus{
+  padding-left: 10px;
+}
+
+.ip:not(:placeholder-shown){
+  padding-left:10px;
+}
