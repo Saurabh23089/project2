@@ -4,7 +4,7 @@ import './firebase.js'
 import {db} from './firebase.js'
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
 import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom';
-import {getFirestore,collection,addDoc} from 'firebase/firestore';
+import {getFirestore,collection,addDoc, getDocs} from 'firebase/firestore';
 import glogo from './glogo.png';
 
 
@@ -19,10 +19,15 @@ function Createaccount(){
     const[password,setpassword]=useState("");
     const[confirmpassword,setconfirmpassword]=useState("");
     const provider=new GoogleAuthProvider();
-   const navigate=useNavigate();
+    const navigate=useNavigate();
 
 
     const createaccount=async(Name,email,password)=>{
+      if(password.length<6&&password===confirmpassword)
+      {
+        alert("Password should be at least 6 characters");
+      }
+       
          try{
            const auth=getAuth();
            const firestore=getFirestore();
@@ -60,7 +65,9 @@ function Createaccount(){
           }
       }
 
+      
   
+      
       const signupwithGoogle=() =>{
           const auth=getAuth();
           signInWithPopup(auth,provider)
@@ -72,16 +79,21 @@ function Createaccount(){
           .catch((error) => {
              const errormessage=error.message;
              const errorcode=error.code;
-             console.log('Login With Google Failed',errorcode,errormessage);
+             
+             console.log('Signup With Google Failed',errorcode,errormessage);
           })
-      }
+      }  
   
       const handlecreateaccount=(e) => {
          e.preventDefault();
          if(Name!=''&&email!=''&&password===confirmpassword)
          {
-            createaccount(Name,email,password,mobile);
+            createaccount(Name,email,password);
             console.log('sign in successfull');
+         }
+         else if(password!==confirmpassword)
+         {
+           alert("Passwords don't match");
          }
       }
   

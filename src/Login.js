@@ -5,25 +5,24 @@ import { useState } from 'react';
 import Welcome from './Welcome';
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
 import {BrowserRouter,Routes,Route,useNavigate, Link} from 'react-router-dom';
+import { getFirestore,collection,getDocs,query,where} from 'firebase/firestore';
 import {db} from './firebase.js';
 
 
 
 function LoginForm(){
     const[email,setemail]=useState('');
-    const[password,setpassowrd]=useState('');
+    const[password,setpassword]=useState('');
     const provider=new GoogleAuthProvider();
     const navigate=useNavigate();
 
-   
-      
   
     const handlesignin=(email,password)=>{
       const auth=getAuth();
       signInWithEmailAndPassword(auth,email,password)
       .then((usercredential) => {
           const user=usercredential.user;
-          console.log('Sign In Scuccessfull');
+          console.log('Sign In Successfull');
           navigate('/Welcome');
       })
       .catch((error) => {
@@ -35,14 +34,11 @@ function LoginForm(){
         }
         else if(errorcode==='auth/wrong-password')
         {
-          prompt('Incorrect Password')
+            alert("Incorrect Password");
         }
-       /*  const errorcode=error.code;
-         const message=error.message;
-         console.log('Sign In Failed:',errorcode,message,'1'); */
       })
     }  
-  
+
   
       const signinwithgoogle=() => {
          const auth=getAuth();
@@ -58,7 +54,7 @@ function LoginForm(){
             console.log('Login With Google Failed',errorcode,errormessage);
          })
   
-      }
+      }  
   
   
     const handlelogin=(e) => {
@@ -68,6 +64,7 @@ function LoginForm(){
   
     const handleloginwithgoogle=(e) => {
       e.preventDefault();
+      console.log(2);
       signinwithgoogle();
     }
   
@@ -82,7 +79,7 @@ function LoginForm(){
               <input className='ip' placeholder='Enter Email Address' type="email" onChange={(e) => {setemail(e.target.value)}}/>
             </label>
             <label className='label'>Password
-              <input className='ip' placeholder='Enter Password'type="password" onChange={(e) => {setpassowrd(e.target.value)}}/>
+              <input className='ip' placeholder='Enter Password'type="password" onChange={(e) => {setpassword(e.target.value)}}/>
             </label>
             <button type="submit" onClick={handlelogin} className='loginbtn'>Login</button>
             <div>
