@@ -1,12 +1,5 @@
 
-*{
-  box-sizing: border-box;
-}
-
 body{
-  background-color:#22254b;
-  color: white;
-  font-family: "poppins",sans-serif;
   margin:0;
 }
 
@@ -72,17 +65,7 @@ header{
   
 }
 
-.logout-btn{
-  margin-left:auto;
-  color:snow;
-  
-}
 
-.logout-btn:hover{
-  cursor:pointer;
-  color:powderblue;
- 
-}
 
 .search{
   font-family: inherit;
@@ -117,63 +100,3 @@ header{
   color:red;
 }
 
-
-.loginpage{
-  position:absolute;
-  top:50px;
-  right:350px; 
-}
-
-.ip{
-  min-height: 40px;
-}
-
-.loginbtn{
-  width:120px;
-  border-radius: 8px;
-  border-right-color: #389738;
-  margin-bottom: 20px;
-  background-color:aqua;
-  margin-top:5px;
-}
-
-.hg{
-  position:absolute;
-  color:black;
-  border:0.5px solid burlywood;
-  width:220px;
-}
-
-.hg:hover{
-  color:springgreen
-}
-
-.googlelogo{
-  position:absolute;
-  top:0 px;
-  left:0px;
-  height:25.3px;
-  text-align:center;
-  outline:#389738  
-}
-
-.loginbtn:hover{
-  border:2px solid blue;
-}
-
-
-.lt1:hover{
-   cursor:pointer;
-}
-
-.ip{
-  padding:10px;
-}
-
-.ip:focus{
-  padding-left: 10px;
-}
-
-.ip:not(:placeholder-shown){
-  padding-left:10px;
-}

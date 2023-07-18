@@ -1,9 +1,19 @@
+body{
+  font-family: "poppins",sans-serif;
+}
+
+
 label,input{
   display:block;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 2px;
   
 }
+
+.lt1{
+  padding-bottom: 10px;;
+}
+
 
 input{
   border:1px solid ghostwhite;
@@ -47,6 +57,7 @@ input:focus{
   margin-right: 120px;
   display: inline-block;
   padding-left: 700px;
+  visibility: visible;
 }
 
 .lt2{
@@ -92,7 +103,8 @@ input:focus{
 .cn{
   position:absolute;
   left:80px;
-  top:280px;
+  top:240px;
+  height:30px;
   width:200px;
   border:none;
   color:salmon;
@@ -102,16 +114,16 @@ input:focus{
 
 .cn:hover{
   color:burlywood;
-   
+  cursor:pointer;
 }
 
 .sg{
   position:absolute;
   left:80px;
-  top:340px;
+  top:300px;
   width:200px;
   outline:none;
-  
+  height:29px;
   color:cadetblue;
   border:1px solid #ccc;
   background-color: antiquewhite;
@@ -119,6 +131,7 @@ input:focus{
 
 .sg:hover{
    color:rosybrown;
+   cursor:pointer;
 }
 
 .lt1:hover{
@@ -134,15 +147,15 @@ input:focus{
 .heading{
   position:absolute;
   left:80px;
-  top:18px;
+  top:0px;
 }
 
 
 .googlelogo1{
   position:absolute;
-  top:0 px;
-  left:0px;
-  height:25.65px;
+  top:0.5px;
+  left:0.405px;
+  height:25.7px;
   text-align:center;
 }
 
@@ -150,6 +163,7 @@ input:focus{
   text-decoration:underline;
   text-decoration-color: blue;
   cursor:pointer;
+
 }
 
 .caform{
@@ -165,7 +179,92 @@ input:not(:focus){
   padding-left: 10px;
 }
 
+.glogo{
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  width:2px;
+  max-height:27px;
+  
+}
 
 
+.logout-btn{
+  margin-left:auto;
+  color:snow;
+  
+}
+
+.logout-btn:hover{
+  cursor:pointer;
+  color:powderblue;
+ 
+}
 
 
+.loginpage{
+  position:absolute;
+  top:50px;
+  right:350px; 
+}
+
+.ip{
+  min-height: 20px;
+}
+
+.loginbtn{
+  width:120px;
+  border-radius: 8px;
+  border-right-color: #389738;
+  margin-bottom: 20px;
+  background-color:aqua;
+  margin-top:5px;
+  height:30px;
+}
+
+.hg{
+  position:absolute;
+  color:black;
+  border:0.5px solid burlywood;
+  width:220px;
+  height:29px;
+}
+
+.hg:hover{
+  color:springgreen;
+  cursor:pointer;
+}
+
+.googlelogo{
+  position:absolute;
+
+  top:0.8px;
+  left:1.5px;
+  height:26px;
+  width:26.5px;
+  
+  text-align:center;
+  outline:#389738  
+}
+
+.loginbtn:hover{
+  border:2px solid blue;
+  cursor:pointer;
+}
+
+
+.lt1:hover{
+   cursor:pointer;
+}
+
+.ip{
+  padding:10px;
+}
+
+.ip:focus{
+  padding-left: 10px;
+}
+
+.ip:not(:placeholder-shown){
+  padding-left:10px;
+}
