@@ -6,9 +6,12 @@ import './firebase.js'
 import Welcome from './Welcome.js'
 import { useState } from 'react';
 import Sample from './sample.js';
+import dotenv from 'dotenv';
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
 import {BrowserRouter,Routes,Route,useNavigate, Router,Switch} from 'react-router-dom';
 
+
+dotenv.config();
 
 function App() {
 
