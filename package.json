@@ -11,6 +11,7 @@
     "csso": "^5.0.5",
     "dotenv": "^16.3.1",
     "firebase": "^9.23.0",
+    "os": "^0.1.2",
     "os-browserify": "^0.3.0",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
