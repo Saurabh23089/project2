@@ -102,6 +102,9 @@ header{
 
 @media (max-width: 767px) {
   .search{
-    width:200px;
+    width:150px;
+  }
+  .logout-btn{
+    padding-top:10px;
   }
 }
