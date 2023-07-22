@@ -65,7 +65,7 @@ function LoginForm(){
   
     const handleloginwithgoogle=(e) => {
       e.preventDefault();
-    
+      console.log(process.env.REACT_APP_FIREBASE_API_KEY);
       signinwithgoogle();
     }
   
