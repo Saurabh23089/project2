@@ -6,11 +6,11 @@ import 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "moviez-be6bd.firebaseapp.com",
-  projectId: "moviez-be6bd",
-  storageBucket: "moviez-be6bd.appspot.com",
-  messagingSenderId: "317146093180",
-  appId: "1:317146093180:web:0aa5647e0f260983e25bf9"
+  authDomain:process.env.REACT_APP_AUTH_DOMAIN,
+  projectId:process.env.REACT_APP_PROJECT_ID,
+  storageBucket:process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId:process.env.REACT_APP_MESSAGNG_SENDER_ID,
+  appId:process.env.REACT_APP_APP_ID
   };
 
   const app = initializeApp(firebaseConfig);
