@@ -100,3 +100,8 @@ header{
   color:red;
 }
 
+@media (max-width: 767px) {
+  .search{
+    width:200px;
+  }
+}
