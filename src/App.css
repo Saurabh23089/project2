@@ -268,3 +268,120 @@ input:not(:focus){
 .ip:not(:placeholder-shown){
   padding-left:10px;
 }
+
+
+
+
+/*  */
+
+/* Common styles for both mobile and desktop */
+/*
+body {
+  font-family: "poppins", sans-serif;
+}
+
+label,
+input {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
+
+input {
+  border: 1px solid ghostwhite;
+  max-height: 40px;
+}
+
+input:focus {
+  padding-left: 10px;
+} */
+
+
+/* Styles for mobile */
+@media (max-width: 767px) {
+  .right-portion {
+    margin-left: 0;
+  }
+
+  .div1,
+  .div2 {
+    display: block;
+    padding-left: 0;
+  }
+
+  .lt1 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .loginpage {
+    top: 50px;
+    right: 0;
+    left: 0;
+  }
+
+  .heading {
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .loginpage{
+    position:absolute;
+    left:20px;
+  }
+  
+}
+
+/* Styles for desktop */
+/*
+@media (min-width: 768px) {
+  .loginpage {
+    position: absolute;
+    top: 50px;
+    right: 350px;
+  }
+
+  .right-portion {
+    margin-left: 700px;
+  }
+
+  .div1,
+  .div2 {
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+  }
+
+  .lt1 {
+    margin-right: 120px;
+    display: inline-block;
+    padding-left: 700px;
+    visibility: visible;
+  }
+
+  .logout-btn {
+    margin-left: auto;
+  }
+}*/
+
+@media (max-width: 767px) {
+  .cn{
+    position:absolute;
+    top:350px;
+    left:20px;
+    width:150px;
+  }
+  
+  .sg{
+     position:absolute;
+     top:350px;
+     left:200px;
+     width:180px;
+  }
+ .caform{
+    padding-left: 20px;
+  } 
+
+}
+
