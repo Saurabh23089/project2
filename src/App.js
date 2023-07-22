@@ -10,6 +10,8 @@ import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,Googl
 import {BrowserRouter,Routes,Route,useNavigate, Router,Switch} from 'react-router-dom';
 
 
+require('dotenv').config();
+
 
 function App() {
   return (
