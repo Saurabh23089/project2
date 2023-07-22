@@ -9,6 +9,7 @@ import {db} from './firebase.js';
 
 
 
+
 function LoginForm(){
     const[email,setemail]=useState('');
     const[password,setpassword]=useState('');
@@ -41,6 +42,7 @@ function LoginForm(){
   
       const signinwithgoogle=() => {
          const auth=getAuth();
+         
          signInWithPopup(auth,provider)
          .then((result) => {
            const user=result.user;
@@ -63,7 +65,7 @@ function LoginForm(){
   
     const handleloginwithgoogle=(e) => {
       e.preventDefault();
-      console.log(2);
+    
       signinwithgoogle();
     }
   

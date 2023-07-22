@@ -2,15 +2,15 @@ import firebase from 'firebase/app';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import 'firebase/auth';
-import dotenv from 'dotenv';
+
 
 const firebaseConfig = {
-  apikey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "project2-71fbb.firebaseapp.com",
-  projectId: "project2-71fbb",
-  storageBucket: "project2-71fbb.appspot.com",
-  messagingSenderId: "461304235873",
-  appId: "1:461304235873:web:bf259846f2a24d13706720"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: "moviez-be6bd.firebaseapp.com",
+  projectId: "moviez-be6bd",
+  storageBucket: "moviez-be6bd.appspot.com",
+  messagingSenderId: "317146093180",
+  appId: "1:317146093180:web:0aa5647e0f260983e25bf9"
   };
 
   const app = initializeApp(firebaseConfig);

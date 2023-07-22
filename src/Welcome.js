@@ -9,6 +9,7 @@ import {} from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from './Login.js'
+import dotenv from 'dotenv';
 
 function Welcome()
 {
@@ -17,8 +18,8 @@ function Welcome()
   const[searchterm,setsearchterm]=useState('');
   const navigate=useNavigate();
 
-  const search_api=`https://api.themoviedb.org/3/search/movie?api_key=${'8b43381d2baea978799884b0d93c2310'}&query=`;
-  const IMU = `https://api.themoviedb.org/3/discover/movie?api_key=${'8b43381d2baea978799884b0d93c2310'}&hi`;
+  const search_api=`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_SEARCH_API}&query=`;
+  const IMU = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_IMU}&hi`;
 
 
   useEffect(() => {
@@ -109,139 +110,3 @@ function Welcome()
 export default Welcome;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-function Profile(){
-
-  const[showprofile,setshowprofile]=useState(false);
-
-  const handlemenuclick=() => {  // I want to acheive when user clicks outside profile area , the profile should be hidden
-     setshowprofile(!showprofile);
-  }
-
-  const handleoutsideclick=(e) => {
-    if(e.target.id!=='menu-btn')
-    {
-      setshowprofile(false);
-    }
-  } 
-
-/*  return (
-    <>
-    <div id='profile' onnClick={handleoutsideclick}>
-      <p id='menu-btn' onClick={handlemenuclick}>MENU</p>
-      {showprofile&&<div>
-       {<h1>AIACTR</h1>}
-      </div>}
-    </div>
-    
-    </>
-  )*/
-
- /* return(
-    <Dropdown>
-      <DropdownButton id="profile" title="Profile">
-        <Dropdown.Item href="#/action-1">Image</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Watchlist</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
-        </DropdownButton>
-    </Dropdown>
-  )
-}    
-
-function Welcome(){
-    const [web,setweb]=useState([]);
-    const [showrating,setshowrating]=useState(false);
-
-    useEffect(() => {
-
-      fetch('/series.json')
-      
-      .then((response) => {
-        console.log(response);
-        return response.json()
-        
-      })
-      .then((data) => setweb(data))
-      .catch((error) => console.log(error.message))
-    },[])
-
- return(
-   <>
-    
-    
-    <h1 className='title'>Showjjhghhhhhhhhhhhhhhgghgjh</h1>
-    
-     <Dropdown>
-      <DropdownButton id="profile2" title="Profile">
-        <Dropdown.Item href="#/action-1">Image</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Watchlist</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
-        </DropdownButton>
-    </Dropdown>
-    
-
-    
-     {web.map((e) => {
-       return (
-         <div class="ss">
-       <img src={e.poster} alt={e.title}/>
-       <button>Watch</button>
-       <span onMouseEnter={() => setshowrating(true)} onMouseLeave={() => setshowrating(false)}>IMDB {showrating?e.imdb:""}</span>
-       
-       <span><p>S1 || S2</p></span>
-      
-       </div>
-       
-       )
-     })} 
-   </>
- )
-  
-}
-
-export default Welcome; 
-
-
-/*
- const[profileimage,setprofileimage]=useState();
-
-useEffect(() => {
-  const auth=getAuth();
-   onAuthStateChanged(auth,(user) => {
-      const storage=getStorage();
-      const imageref=ref(storage,`image${user.uid}`);
-      getDownloadURL(imageref).then((url) => setprofileimage(url))
-   })
-},[])
-
-return (
-   <nav>
-     {profileimage&&<img src={profileimage} alt="ProfileImage"/>}
-   </nav>
-)  
-*/
