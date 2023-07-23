@@ -1,14 +1,10 @@
 import React , {useState,useEffect} from 'react'; 
 import './firebase.js'
-import firebase from 'firebase/app';
 import {getAuth,onAuthStateChanged,signOut} from 'firebase/auth';
-import { getStorage,ref,getDownloadURL} from 'firebase/storage';
 import Movie from './components/movie';
 import './index.css';
 import {} from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import LoginForm from './Login.js'
 
 
 function Welcome()
@@ -91,9 +87,7 @@ function Welcome()
       />
       
     </form>
-    
-    {/* <label><button className='logout-btn' onClick={handlelogout}>Logout</button></label>     */}
-    
+      
     <span className='logout-btn' onClick={handlelogout}>Logout</span>
 
     </header>

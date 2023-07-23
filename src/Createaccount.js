@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './App.css'
 import './firebase.js'
-import {db} from './firebase.js'
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
-import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom';
+import { getAuth,createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import {useNavigate} from 'react-router-dom';
 import {getFirestore,collection,addDoc, getDocs} from 'firebase/firestore';
 import glogo from './glogo.png';
 
@@ -16,7 +15,6 @@ function Createaccount(){
 
     const[Name,setName]=useState("");
     const[email,setemail]=useState("");
-    const[mobile,setmobile]=useState("");
     const[password,setpassword]=useState("");
     const[confirmpassword,setconfirmpassword]=useState("");
     const provider=new GoogleAuthProvider();

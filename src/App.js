@@ -15,7 +15,6 @@ import {BrowserRouter,Routes,Route,useNavigate, Router,Switch} from 'react-route
 function App() {
   return (
   <> 
- 
   <BrowserRouter>
     
      <Routes>

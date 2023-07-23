@@ -2,11 +2,8 @@ import './App.css';
 import './firebase.js';
 import glogo from './glogo.png'; 
 import { useState } from 'react';
-import Welcome from './Welcome';
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signUpWithPopup} from 'firebase/auth';
-import {BrowserRouter,Routes,Route,useNavigate, Link} from 'react-router-dom';
-import {db} from './firebase.js';
-
+import { getAuth,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import {useNavigate} from 'react-router-dom';
 
 
 
